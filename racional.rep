@@ -1,3 +1,0 @@
-int numerador;
-int denominador;
-void simplificar();

@@ -1,0 +1,9 @@
+union tok {
+	int n;
+	double x;
+	string s;
+	racional r;
+	codi cod;
+};
+
+tok t;

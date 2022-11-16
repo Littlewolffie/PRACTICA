@@ -3,7 +3,6 @@ union tok {
 	double x;
 	string s;
 	racional r;
-	codi cod;
 };
 
 tok t;

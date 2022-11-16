@@ -1,9 +1,5 @@
 OPCIONS =-g -O0 -Wall -Wno-sign-compare -Wno-deprecated -std=c++11
 
-
-main.exe: main.o racional.o token.o
-	g++ -o program.exe main.o llista.o solution.o
-	rm *.o
 racional.o: racional.cpp racional.hpp
 	g++ -c racional.cpp $(OPCIONS)
 	
@@ -21,7 +17,10 @@ math_sessio.o: math_sessio.cpp math_sessio.hpp
 	
 main.o: main.cpp token.hpp racional.hpp
 	g++ -c main.cpp $(OPCIONS)
-
+	
+main.exe: main.o racional.o token.o
+	g++ -o program.exe main.o llista.o solution.o
+	rm *.o
 
 
 clean:

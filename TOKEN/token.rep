@@ -7,3 +7,4 @@ union tok {
 };
 
 tok t;
+codi cod;

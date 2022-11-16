@@ -1,9 +1,9 @@
-union tok {
-	int n;
-	double x;
-	string s;
-	racional r;
+union tipus {
+	int enter;
+	double real;
+	string text;
+	racional frac;
 };
 
-tok t;
-codi cod;
+tipus tip;
+codi code;

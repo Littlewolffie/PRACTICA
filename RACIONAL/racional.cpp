@@ -74,7 +74,9 @@ int racional::denom() const throw()
 
 int racional::part_entera() const throw()
 {
-	return numerador/denominador;
+	if ( numerador < 0) return (-1);
+	else return numerador/denominador;
+	
 }
 
 racional racional::residu() const throw()
@@ -86,7 +88,7 @@ racional racional::residu() const throw()
 		r.denominador = denominador;
 	} else if(numerador < denominador) {
 		if (numerador < 0 )
-			r.numerador = -1*numerador;
+			r.numerador = numerador+denominador;
 		else r.numerador = numerador;	
 		r.denominador = denominador;
 	} else if(numerador == denominador) {

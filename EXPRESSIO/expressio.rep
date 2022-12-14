@@ -1,0 +1,7 @@
+struct node {
+      node* _esq;
+      node* _dret;
+      token tok;
+    };
+    node* _arrel;
+    int i;

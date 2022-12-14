@@ -1,27 +1,26 @@
-OPCIONS =-g -O0 -Wall -Wno-sign-compare -Wno-deprecated -std=c++11
+program.exe: driver_esinmath.o racional.o expressio.o variables.o math_sessio.o math_io.o token.o 
+	g++ -o Driver.exe driver_esinmath.o racional.o token.o expressio.o variables.o math_sessio.o math_io.o -lesin
 
-racional.o: racional.cpp racional.hpp
-	g++ -c racional.cpp $(OPCIONS)
-	
-token.o: token.cpp token.hpp
-	g++ -c token.cpp $(OPCIONS)
-	
-expressio.o: expressio.cpp expressio.hpp
-	g++ -c expressio.cpp $(OPCIONS)
-	
-variables.o: variables.cpp variables.hpp
-	g++ -c variables.cpp $(OPCIONS)
-	
-math_sessio.o: math_sessio.cpp math_sessio.hpp
-	g++ -c math_sessio.cpp $(OPCIONS)
-	
-main.o: main.cpp token.hpp racional.hpp
-	g++ -c main.cpp $(OPCIONS)
-	
-main.exe: main.o racional.o token.o
-	g++ -o program.exe main.o llista.o solution.o
-	rm *.o
+driver_esinmath.o: driver_esinmath.cpp
+	g++ -c driver_esinmath.cpp $(OPCIONS);
 
+math_io.o: math_io.cpp math_io.hpp
+	g++ -c math_io.cpp $(OPCIONS);
+
+math_sessio.o: math_sessio.cpp math_sessio.hpp math_sessio.rep
+	g++ -c math_sessio.cpp $(OPCIONS);
+
+variables.o: variables.cpp variables.hpp variables.rep
+	g++ -c variables.cpp $(OPCIONS);
+
+expressio.o: expressio.cpp expressio.hpp expressio.rep
+	g++ -c expressio.cpp $(OPCIONS);
+
+token.o: token.cpp token.hpp token.rep
+	g++ -c token.cpp $(OPCIONS);
+
+racional.o: racional.cpp racional.hpp racional.rep
+	g++ -c racional.cpp $(OPCIONS);
 
 clean:
 	rm *.o

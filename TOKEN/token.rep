@@ -1,9 +1,12 @@
-union tipus {
+union t {
 	int enter;
 	double real;
 	string text;
 	racional frac;
+
+	t();
+	~t();
 };
 
-tipus tip;
+t tip;
 codi code;
